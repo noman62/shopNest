@@ -9,7 +9,7 @@ const Footer = () => {
             <div className="px-1 pt-10 mx-8">
                 <div className="grid lg:grid-cols-4 gap-10 md:grid-cols-2 sm:grid-cols-1 mb-5">
                     <div>
-                        <h4 className="text-4xl tracking-wider text-indigo-200 font-bold ">COVIDOPEDIA</h4>
+                        <h4 className="text-4xl tracking-wider text-indigo-200 font-bold ">SHOPNET</h4>
                         <p
                             className="font-medium tracking-wide text-white text-justify"
                         >
@@ -48,11 +48,11 @@ const Footer = () => {
                     </div>
 
                     <div>
-                        <p className="text-xl font-extrabold tracking-wide text-indigo-200">For Patients</p>
+                        <p className="text-xl font-extrabold tracking-wide text-indigo-200">For Customer</p>
                         <ul className="mt-2 space-y-2">
                             <li>
                                 <FontAwesomeIcon className="text-white" icon={faAngleDoubleRight} />
-                                <a href="/" className="text-white ml-2 hover:ml-4">Search for octors </a>
+                                <a href="/" className="text-white ml-2 hover:ml-4">View Product </a>
                             </li>
                             <li>
                                 <FontAwesomeIcon className="text-white" icon={faAngleDoubleRight} />
@@ -64,37 +64,33 @@ const Footer = () => {
                             </li>
                             <li>
                                 <FontAwesomeIcon className="text-white" icon={faAngleDoubleRight} />
-                                <a href="/" className="text-white ml-2 hover:ml-4">  Booking</a>
+                                <a href="/" className="text-white ml-2 hover:ml-4">Buy Product</a>
                             </li>
                             <li>
                                 <FontAwesomeIcon className="text-white" icon={faAngleDoubleRight} />
-                                <a href="/" className="text-white ml-2 hover:ml-4">Patient Dashboard</a>
+                                <a href="/" className="text-white ml-2 hover:ml-4">Customer Dashboard</a>
                             </li>
                         </ul>
                     </div>
 
                     <div>
-                        <p className="text-xl font-extrabold tracking-wide text-indigo-200">For Doctors</p>
+                        <p className="text-xl font-extrabold tracking-wide text-indigo-200">For Admin</p>
                         <ul className="mt-2 space-y-2">
                             <li>
                                 <FontAwesomeIcon className="text-white" icon={faAngleDoubleRight} />
-                                <a href="/" className="text-white ml-2 hover:ml-4">Appointments</a>
+                                <a href="/" className="text-white ml-2 hover:ml-4">Add Customer</a>
                             </li>
                             <li>
                                 <FontAwesomeIcon className="text-white" icon={faAngleDoubleRight} />
-                                <a href="/" className="text-white ml-2 hover:ml-4">Chat</a>
+                                <a href="/login" className="text-white ml-2 hover:ml-4">Login</a>
                             </li>
                             <li>
                                 <FontAwesomeIcon className="text-white" icon={faAngleDoubleRight} />
-                                <a href="/" className="text-white ml-2 hover:ml-4">Login</a>
+                                <a href="/signup" className="text-white ml-2 hover:ml-4">Register </a>
                             </li>
                             <li>
                                 <FontAwesomeIcon className="text-white" icon={faAngleDoubleRight} />
-                                <a href="/" className="text-white ml-2 hover:ml-4">Register </a>
-                            </li>
-                            <li>
-                                <FontAwesomeIcon className="text-white" icon={faAngleDoubleRight} />
-                                <a href="/" className="text-white ml-2 hover:ml-4">Doctor Dashboard</a>
+                                <a href="/admin" className="text-white ml-2 hover:ml-4">Admin Dashboard</a>
                             </li>
                         </ul>
                     </div>
@@ -106,10 +102,10 @@ const Footer = () => {
                                 <p className="text-white">Dhaka, Bangladesh.</p>
                             </li>
                             <li>
-                                <p className="text-white ">+880 171500000</p>
+                                <p className="text-white ">+8801888606797</p>
                             </li>
                             <li>
-                                <p className="text-white">test@covidopedia.com</p>
+                                <p className="text-white">test@shoptNet.com</p>
                             </li>
                         </ul>
                     </div>
