@@ -6,10 +6,23 @@ import MedicinesData from '../MedicinesData/MedicinesData'
 import { Link } from 'react-router-dom'
 import ProductNav from './ProductNav'
 
+import { useDispatch } from 'react-redux'
+import { loggin } from '../../features/userSlice'
+
 const Medicines = () => {
   const [medicines, setMedicines] = useState([])
-
+  const [cart, setCart] = useState([]);
   useEffect(() => setMedicines(MedicinesData), [])
+  const dispatch = useDispatch()
+  const addToCart = (medicine) => {
+    setCart((prevCart) => [...prevCart, medicine]);
+    dispatch(
+      loggin({
+        user: cart
+      })
+    )
+    
+  };
 
   return (
     <>
@@ -20,7 +33,7 @@ const Medicines = () => {
             {medicines.map(medicine => {
               return (
                 <>
-                  <div className='overflow-hidden rounded bg-white'>
+                  <div className='overflow-hidden rounded bg-white' onClick={() => addToCart(medicine)}>
                     <div className='p-3 flex justify-between items-center '>
                       <Link href='/medicineDetails'>
                         <a>
@@ -42,6 +55,7 @@ const Medicines = () => {
                         <div
                           style={{ height: '40px', width: '40px' }}
                           className='rounded-full flex items-center  justify-center hover:bg-blue-500 hover:text-white'
+                          
                         >
                           <FontAwesomeIcon className='' icon={faShoppingCart} />
                         </div>
@@ -53,6 +67,7 @@ const Medicines = () => {
             })}
           </div>
         </div>
+        
       </div>
     </>
   )

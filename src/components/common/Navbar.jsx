@@ -1,8 +1,12 @@
 import { useState } from 'react'
 import {  Bars3BottomRightIcon, XMarkIcon } from '@heroicons/react/24/solid'
+import { useSelector } from 'react-redux';
+import { selectUser } from '../../features/userSlice';
 
 
 const Header = () => {
+  let cart = useSelector(selectUser)
+  console.log(cart.length);
   let Links = [
     { name: 'HOME', link: '/' },
     { name: 'Product', link: '/product' },
@@ -62,7 +66,7 @@ const Header = () => {
                 />
               </svg>
               
-              <span className='absolute top-0 left-0 p-1 text-xs text-white bg-blue-500 rounded-full'></span>
+              <span className='absolute top-0 left-0 p-1 text-xs text-white bg-blue-500 rounded-full'>{cart.length}</span>
             </a>
           </div>
         </ul>

@@ -1,22 +1,36 @@
-import { useState } from 'react'
+import  { useState } from 'react';
+import PhoneInput from 'react-phone-number-input';
+import 'react-phone-number-input/style.css'; // Import the default styles
+
 
 const SignUp = () => {
   const [user, setUser] = useState({
     name: '',
     email: '',
-    password: ''
-  })
+    password: '',
+    phoneNumber: '', 
+  });
 
-  //Handle form state
+  // Handle form state
   const handleChange = e => {
-    const newUserInfo = { ...user }
-    newUserInfo[e.target.name] = e.target.value
-    setUser(newUserInfo)
-  }
-  //Handle Form Submit
+    const newUserInfo = { ...user };
+    newUserInfo[e.target.name] = e.target.value;
+    setUser(newUserInfo);
+  };
+
+  const handlePhoneChange = phoneNumber => {
+    setUser(prevUser => ({
+      ...prevUser,
+      phoneNumber,
+    }));
+  };
+
+  // Handle Form Submit
   const handleSubmit = e => {
-    e.preventDefault()
-  }
+    e.preventDefault();
+    // Your form submission logic here
+    console.log(user); // For demonstration purposes
+  };
 
   return (
     <section className='my-8'>
@@ -54,6 +68,7 @@ const SignUp = () => {
                 placeholder='Your email address'
               />
             </div>
+
             <div className='space-y-1 text-sm'>
               <label htmlFor='password' className='block text-gray-600'>
                 Password
@@ -66,6 +81,22 @@ const SignUp = () => {
                 placeholder='Your password'
               />
             </div>
+
+            {/* Phone Number Input */}
+            <div className='space-y-1 text-sm'>
+              <label htmlFor='phoneNumber' className='block text-gray-600'>
+                Phone Number
+              </label>
+              <PhoneInput
+                name='phoneNumber'
+                defaultCountry='BD' 
+                className='w-full px-4 py-3 text-gray-800 border border-indigo-300 rounded-md bg-indigo-50'
+                value={user.phoneNumber}
+                onChange={handlePhoneChange}
+                placeholder='Your phone number'
+              />
+            </div>
+
             <div className='flex flex-col items-center justify-center sm:items-center sm:flex-row'>
               <button
                 type='submit'
@@ -84,7 +115,9 @@ const SignUp = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default SignUp
+
+
+export default SignUp;
